@@ -1,0 +1,6 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# dotenv environment variables file
+.env
