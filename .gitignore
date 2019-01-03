@@ -4,3 +4,6 @@ Thumbs.db
 
 # dotenv environment variables file
 .env
+
+# backuped file
+*.tar.bz2
