@@ -1,0 +1,9 @@
+#!/bin/sh
+
+COMPOSE_PREFIX=minecraft-manager-docker
+SRC=data
+DST=`date +%Y%m%d_%H%M%S`.tar.bz2
+
+docker-compose down
+docker run --rm -v ${COMPOSE_PREFIX}_minecraft_data:/${SRC} -v $(pwd):/dst alpine tar jcf /dst/${DST} ${SRC}
+docker-compose up -d
