@@ -9,11 +9,15 @@ services:
       DIFFICULTY: hard
       EULA: "TRUE"
       FORCE_GAMEMODE: "TRUE"
+      INIT_MEMORY: 1536M
+      MAX_MEMORY: 1536M
       MAX_PLAYERS: 5
+      MAX_WORLD_SIZE: 16384
       MOTD: Server by kurone-kito
-      OPS: kuronekito
+      OPS: ${OPS}
       PVP: "FALSE"
       SEED: ${SEED}
+      VIEW_DISTANCE: 9
     image: itzg/minecraft-server
     ports:
       - "25565:25565"

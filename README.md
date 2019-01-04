@@ -46,6 +46,17 @@ $ docker-compose down -v
 $ ./backup
 ```
 
+### Settings (設定する)
+
+下記の内容の`.env`ファイルを、同一フォルダに設置します。
+
+```dotenv
+SEED=Kuroneko
+OPS=kuronekito
+```
+
+たくさんのお馬さんがいる平原にスポーンできます。フゥーー！
+
 ## TODO (やること)
 
 - とりあえずワールド作れるの検証しただけで、あまり真面目な検証ができていません。。
