@@ -44,6 +44,9 @@ $ docker-compose down -v
 
 ```sh
 $ ./backup
+ => 20190810_011451.tar.bz2
+$ ./backup foo
+ => foo.tar.bz2
 ```
 
 ### Settings (設定する)
