@@ -1,0 +1,12 @@
+#!/bin/sh
+
+NOW=`date +%Y%m%d_%H%M%S`
+./backup ${NOW}
+tar jxf ${NOW}.tar.bz2
+rm ${NOW}.tar.bz2
+
+DST="${HOME}/Library/Application Support/minecraft/saves"
+WORLD=world
+rm -rf "${DST}/${WORLD}"
+mv "data/${WORLD}" "${DST}/"
+rm -rf data
