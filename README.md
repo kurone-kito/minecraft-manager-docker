@@ -49,6 +49,14 @@ $ ./backup foo
  => foo.tar.bz2
 ```
 
+#### download data and play locally (ワールドをダウンロードしてシングルプレイする)
+
+現状 Mac のみ対応です。
+
+```sh
+$ ./save
+```
+
 ### Settings (設定する)
 
 下記の内容の`.env`ファイルを、同一フォルダに設置します。
