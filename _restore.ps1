@@ -15,10 +15,10 @@ if (!(Test-Path $file)) {
 $composePrefix = "minecraft-manager-docker"
 $dst = "data"
 
-$srcMount = "{0}:/dst" -f $PWD
+$srcMount = "{0}:/src" -f $PWD
 $dstMount = "source={0}_minecraft_data,destination=/{1}" -f $composePrefix, $dst
-$srcPath = "/dst/{0}" -f $file
+$srcPath = "/src/{0}" -f $file
 
-# docker-compose down
-# docker run --rm --mount $srcMount -v $dstMount alpine tar jcf $dstPath $src
-# docker-compose up -d
+docker-compose down
+docker run --rm --mount $dstMount -v $srcMount alpine tar jxf $srcPath
+docker-compose up -d
