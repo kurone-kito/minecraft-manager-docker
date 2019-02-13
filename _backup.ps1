@@ -1,4 +1,4 @@
-Param([string]$fileName = (Get-Date -Format "yyyyMMddHHmmss"))
+Param([string]$fileName = (Get-Date -Format "yyyyMMdd_HHmmss"))
 Set-StrictMode -Version Latest
 
 $composePrefix = "minecraft-manager-docker"
