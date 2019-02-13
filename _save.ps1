@@ -1,5 +1,5 @@
 Set-StrictMode -Version Latest
-$fileName = Get-Date -Format "yyyyMMddHHmmss"
+$fileName = Get-Date -Format "yyyyMMdd_HHmmss"
 
 $composePrefix = "minecraft-manager-docker"
 $src = "data"
