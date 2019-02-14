@@ -15,4 +15,8 @@ if [ ! -f ${FILENAME} ] || [ ! -r ${FILENAME} ]; then
 fi
 
 COMPOSE_PREFIX=minecraft-manager-docker
-SRC=data
+DST=data
+
+docker-compose down
+docker run --rm --mount source=${COMPOSE_PREFIX}_minecraft_data,destination=/${DST} -v $(pwd):/src alpine tar jxf /src/${FILENAME}
+docker-compose up -d
