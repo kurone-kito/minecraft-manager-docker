@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ $# -lt 1 ]; then
+    echo "Usage: ./restore 20190810_114514.tar.bz2" >&2
+    exit 255
+fi
+if [ ! -f $1 ] || [ ! -r $1 ]; then
+    echo "File: ${1} is not found." >&2
+    exit 1
+fi
+FILENAME=`basename $1`
+if [ ! -f ${FILENAME} ] || [ ! -r ${FILENAME} ]; then
+    echo "File: ${1} is not found in here." >&2
+    exit 2
+fi
+
+COMPOSE_PREFIX=minecraft-manager-docker
+SRC=data
