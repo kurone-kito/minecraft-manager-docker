@@ -16,6 +16,8 @@ DockerベースのMinecraftサーバー管理ツールです。
 
 このリポジトリをダウンロード&amp;解凍、もしくはcloneして、このフォルダをターミナル(Windowsの場合PowerShell)で開きます。
 
+Dockerに依存しているため、Linuxなど環境次第では `sudo` が必要になる場合があります。
+
 ### Start (はじめる)
 
 ```sh
@@ -53,10 +55,8 @@ $ ./backup foo
 
 ### Restore (バックアップしたワールドを復元する)
 
-現在はWindows、もしくはpwshがインストールされた環境専用です。
-
-```PowerShell
-> ./restore 20190810_114514.tar.bz2
+```sh
+$ ./restore 20190810_114514.tar.bz2
 ```
 
 バックアップファイルは同一フォルダに配置しておく必要があります。

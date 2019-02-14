@@ -1,7 +1,6 @@
 Param([parameter(Mandatory)][string]$Source)
 Set-StrictMode -Version Latest
 
-# TODO: カレントディレクトリに存在するかどうか
 if (!(Test-Path $Source)) {
     Write-Warning ("File: {0} is not found." -f $Source)
     exit 1
