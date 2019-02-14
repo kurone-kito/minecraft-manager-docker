@@ -10,7 +10,7 @@ if [ ! -f $1 ] || [ ! -r $1 ]; then
 fi
 FILENAME=`basename $1`
 if [ ! -f ${FILENAME} ] || [ ! -r ${FILENAME} ]; then
-    echo "File: ${1} is not found in here." >&2
+    echo "File: ${FILENAME} is not found in here." >&2
     exit 2
 fi
 
