@@ -1,22 +1,22 @@
 # Minecraft-server manager for docker-compose
 
 The Docker-based tool that manage Minecraft's world.  
-DockerベースのMinecraftサーバー管理ツールです。
+Docker ベースの Minecraft サーバー管理ツールです。
 
 ## Dependencies (必要なもの)
 
 - docker
 - docker-compose
 
-いくつかの管理スクリプトはWindowsとMacのみで動作します。
+いくつかの管理スクリプトは Windows と Mac のみで動作します。
 
 ## Usage (使い方)
 
 ### Prepare (準備)
 
-このリポジトリをダウンロード&amp;解凍、もしくはcloneして、このフォルダをターミナル(Windowsの場合PowerShell)で開きます。
+このリポジトリをダウンロード&amp;解凍、もしくは clone して、このフォルダをターミナル(Windows の場合 PowerShell)で開きます。
 
-Dockerに依存しているため、Linuxなど環境次第では `sudo` が必要になる場合があります。
+Docker に依存しているため、Linux など環境次第では `sudo` が必要になる場合があります。
 
 ### Start (はじめる)
 
@@ -63,17 +63,16 @@ $ ./restore 20190810_114514.tar.bz2
 
 #### download data and play locally (ワールドをダウンロードしてシングルプレイする)
 
-現状MacとWindowsのみの対応です。
+現状 Mac と Windows のみの対応です。
 
 ```sh
 $ ./save
 ```
 
 また、`-o` オプションをつけることでバックアップも同時に行うことができます。
-(現状Windowsのみ)
 
-```PowerShell
-> ./save -o
+```sh
+$ ./save -o
  => 20190810_114514.tar.bz2
 $ ./save -o foo
  => foo.tar.bz2
