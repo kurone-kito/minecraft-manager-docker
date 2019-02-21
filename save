@@ -1,9 +1,32 @@
-#!/bin/sh
+#!/bin/bash
+
+usage() {
+    echo "Usage: $0 [-o file]" 1>&2
+    exit 1
+}
+
+NAME=`date +%Y%m%d_%H%M%S`
+REMOVE=1
+while getopts oh OPT
+do
+    case ${OPT} in
+        o)
+            NAME=${2:-`date +%Y%m%d_%H%M%S`}
+            REMOVE=0
+            ;;
+        h) usage
+            ;;
+        ?) usage
+            ;;
+    esac
+done
 
 NOW=`date +%Y%m%d_%H%M%S`
 ./backup ${NOW}
 tar jxf ${NOW}.tar.bz2
-rm ${NOW}.tar.bz2
+if [ $REMOVE -eq 1 ]; then
+    rm ${NOW}.tar.bz2
+fi
 
 DST="${HOME}/Library/Application Support/minecraft/saves"
 WORLD=world
