@@ -18,5 +18,10 @@ COMPOSE_PREFIX=minecraft-manager-docker
 DST=data
 
 docker-compose down
-docker run --rm --mount source=${COMPOSE_PREFIX}_minecraft_data,destination=/${DST} -v $(pwd):/src alpine tar jxf /src/${FILENAME}
+
+TEMP_CONTAINER=$(docker run -itd --mount source=${COMPOSE_PREFIX}_minecraft_data,destination=/${DST} alpine)
+docker cp ./${FILENAME} ${TEMP_CONTAINER}:/root/
+docker exec ${TEMP_CONTAINER} tar jxvf /root/${FILENAME} ${SRC}
+docker rm -f ${TEMP_CONTAINER}
+
 docker-compose up -d

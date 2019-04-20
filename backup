@@ -5,5 +5,10 @@ SRC=data
 DST=${1:-`date +%Y%m%d_%H%M%S`}.tar.bz2
 
 docker-compose down
-docker run --rm --mount source=${COMPOSE_PREFIX}_minecraft_data,destination=/${SRC},readonly -v $(pwd):/dst alpine tar jcf /dst/${DST} ${SRC}
+
+TEMP_CONTAINER=$(docker run -itd --mount source=${COMPOSE_PREFIX}_minecraft_data,destination=/${SRC},readonly alpine)
+docker exec ${TEMP_CONTAINER} tar jcvf /root/${DST} ${SRC}
+docker cp ${TEMP_CONTAINER}:/root/${DST} ./
+docker rm -f ${TEMP_CONTAINER}
+
 docker-compose up -d
