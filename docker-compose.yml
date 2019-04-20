@@ -1,7 +1,6 @@
 ---
-version: '3'
+version: "3"
 services:
-
   minecraft-server:
     container_name: minecraft
     environment:
@@ -9,8 +8,8 @@ services:
       DIFFICULTY: hard
       EULA: "TRUE"
       FORCE_GAMEMODE: "TRUE"
-      INIT_MEMORY: 1536M
-      MAX_MEMORY: 1536M
+      INIT_MEMORY: 2880M
+      MAX_MEMORY: 2880M
       MAX_PLAYERS: 5
       MAX_WORLD_SIZE: 16384
       MOTD: Server by kurone-kito
@@ -25,7 +24,7 @@ services:
     restart: always
     tty: true
     volumes:
-    - minecraft_data:/data
+      - minecraft_data:/data
 
 volumes:
   minecraft_data:
